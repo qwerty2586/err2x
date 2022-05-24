@@ -1,8 +1,9 @@
-package tryx
+package tryx_test
 
 import (
 	"errors"
 	"github.com/lainio/err2"
+	"github.com/qwerty2586/err2x.git/tryx"
 	"testing"
 )
 
@@ -17,7 +18,7 @@ func TestOverride(t *testing.T) {
 			t.Errorf("expected error to be %v, got %v", errOverRide, err)
 		}
 	})
-	val := To1(func() (string, error) {
+	val := tryx.To1(func() (string, error) {
 		return fReturningError()
 	}, errOverRide)
 
